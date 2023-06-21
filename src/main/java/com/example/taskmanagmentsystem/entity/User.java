@@ -1,6 +1,7 @@
 package com.example.taskmanagmentsystem.entity;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -11,6 +12,7 @@ import java.util.Set;
 
 @Entity
 @Data
+@Builder
 @Table(name = "_user")
 public class User implements UserDetails {
 
