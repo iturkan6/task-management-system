@@ -1,6 +1,6 @@
 package com.example.taskmanagmentsystem.dto;
 
-public record UserLogin(
+public record UserLoginDTO(
     String email,
     String password
 ) {

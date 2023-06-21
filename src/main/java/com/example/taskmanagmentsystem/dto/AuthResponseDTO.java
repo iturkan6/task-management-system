@@ -1,6 +1,6 @@
 package com.example.taskmanagmentsystem.dto;
 
-public record AuthResponse(
+public record AuthResponseDTO(
     String token
 ) {
 }

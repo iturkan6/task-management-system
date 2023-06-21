@@ -1,7 +1,7 @@
 package com.example.taskmanagmentsystem.service;
 
-import com.example.taskmanagmentsystem.dto.AuthResponse;
-import com.example.taskmanagmentsystem.dto.UserLogin;
+import com.example.taskmanagmentsystem.dto.AuthResponseDTO;
+import com.example.taskmanagmentsystem.dto.UserLoginDTO;
 import com.example.taskmanagmentsystem.dto.UserRequestDTO;
 import com.example.taskmanagmentsystem.entity.User;
 import com.example.taskmanagmentsystem.repository.UserRepo;
@@ -28,10 +28,9 @@ public class AuthService {
         .surname(userRequest.surname())
         .build();
     userRepo.save(user);
-    String token = jwtService.generateToken(user);
   }
 
-  public AuthResponse login(UserLogin request) {
+  public AuthResponseDTO login(UserLoginDTO request) {
     manager.authenticate(
         new UsernamePasswordAuthenticationToken(
             request.email(),
@@ -39,6 +38,6 @@ public class AuthService {
     );
     User user = userRepo.findUserByEmail(request.email()).orElseThrow();
     String token = jwtService.generateToken(user);
-    return new AuthResponse(token);
+    return new AuthResponseDTO(token);
   }
 }
