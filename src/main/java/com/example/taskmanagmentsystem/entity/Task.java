@@ -1,9 +1,7 @@
 package com.example.taskmanagmentsystem.entity;
 
 import com.example.taskmanagmentsystem.dto.TaskStatus;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -12,10 +10,14 @@ import java.time.LocalDate;
 @Data
 public class Task {
   @Id
-  Integer id;
+  private Integer id;
   @Column(nullable = false)
-  String title;
-  String description;
-  LocalDate dueDate;
-  TaskStatus status;
+  private String title;
+  private String description;
+  private LocalDate dueDate;
+  private TaskStatus status;
+
+  @ManyToOne
+  @JoinColumn(name = "user_id", nullable = false)
+  private User user;
 }
