@@ -1,6 +1,7 @@
 package com.example.taskmanagmentsystem.configuration;
 
 import com.example.taskmanagmentsystem.entity.User;
+import com.example.taskmanagmentsystem.exception.UserNotFoundException;
 import com.example.taskmanagmentsystem.repository.UserRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -22,7 +23,7 @@ public class AppConfig {
   @Bean
   public UserDetailsService userDetailsService() {
     return email -> {
-      User user = repo.findUserByEmail(email).orElseThrow(() -> new RuntimeException());
+      User user = repo.findUserByEmail(email).orElseThrow(UserNotFoundException::new);
       return new org.springframework.security.core.userdetails.User(
           user.getUsername(),
           user.getPassword(),
