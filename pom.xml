@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>task-managment-system</artifactId>
+    <artifactId>task-management-system</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>task-managment-system</name>
-    <description>task-managment-system</description>
+    <name>task-management-system</name>
+    <description>task-management-system</description>
     <properties>
         <java.version>20</java.version>
     </properties>

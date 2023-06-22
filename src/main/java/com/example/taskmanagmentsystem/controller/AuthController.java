@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -19,13 +20,14 @@ public class AuthController {
   private final AuthService service;
 
   @PostMapping("/register")
-  public ResponseEntity<Void> registerUser(UserRequestDTO user) {
+  public ResponseEntity<Void> registerUser(
+          @RequestBody UserRequestDTO user) {
     service.register(user);
     return new ResponseEntity<>(HttpStatus.CREATED);
   }
 
   @PostMapping("/login")
-  public ResponseEntity<AuthResponseDTO> loginUser(UserLoginDTO user) {
+  public ResponseEntity<AuthResponseDTO> loginUser(@RequestBody UserLoginDTO user) {
     return ResponseEntity.ok(service.login(user));
   }
 }
