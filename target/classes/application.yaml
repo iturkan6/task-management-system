@@ -2,12 +2,12 @@ spring:
   datasource:
     username: postgres
     password: secret
-    url: jdbc:postgresql://localhost:5432/task_management
+    url: jdbc:postgresql://localhost:5433/task_management
     driver-class-name: org.postgresql.Driver
 
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     show-sql: true
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect

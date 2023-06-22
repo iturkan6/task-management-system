@@ -14,7 +14,7 @@ import java.util.List;
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/task")
-public class UserController {
+public class TaskController {
 
     private final TaskService service;
 
@@ -29,7 +29,7 @@ public class UserController {
         return ResponseEntity.ok(service.getTaskById(id));
     }
 
-    @GetMapping
+    @GetMapping("get")
     public ResponseEntity<List<Task>> getAll() {
         return ResponseEntity.ok(service.getAllTasks());
     }
