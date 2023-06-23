@@ -31,9 +31,10 @@
     The important configuration properties to consider are:
   </p>
   <ol>
-    <li><code>server.port</code>: The port on which the application will run.</li>
-    <li><code>spring.datasource.url</code>: The URL of the database.</li>
-    <li><code>spring.datasource.username</code> and <code>spring.datasource.password</code>: The credentials for the database connection.</li>
+    <li><code>server.port</code>: The port on which the application will run. You can set it as an environment variable named <code>{PORT}</code></li>
+    <li><code>spring.datasource.url</code>: The URL of the database. You can set it as an environment variable named <code>{URL}</code></li>
+    <li><code>spring.datasource.username</code> and <code>spring.datasource.password</code>: The credentials for the database connection.
+    You can set them as environment variables named <code>{USERNAME}</code> and <code>{PASSWORD}</code> respectively.</li>
   </ol>
   <p>Make sure to update these values according to your environment.</p>
   <h2 id="running-the-application">Running the Application</h2>
