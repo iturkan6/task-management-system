@@ -58,4 +58,6 @@
     <li><code>POST /tasks</code>: Create a new task.</li>
     <li><code>PUT /tasks/{id}</code>: Update an existing task.</li>
     <li><code>DELETE /tasks/{id}</code>: Delete a task.</li>
+    <br>
+    <li><code>POST /search</code>: Search tasks based on title, description, or status.</li>
   </ul>
