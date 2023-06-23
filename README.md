@@ -1,4 +1,4 @@
-  <title>Task Management System - MVP of Jira</title>
+
   <h1>Task Management System - MVP of Jira</h1>
   <h2>Table of Contents</h2>
   <ol>
