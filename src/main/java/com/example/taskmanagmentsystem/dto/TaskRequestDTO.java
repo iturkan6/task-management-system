@@ -1,9 +1,10 @@
 package com.example.taskmanagmentsystem.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Builder;
 
 import java.time.LocalDate;
-
+@Builder
 public record TaskRequestDTO(
         String title,
         String description,

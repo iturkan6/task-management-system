@@ -1,11 +1,11 @@
 server:
-  port: 8080
+  port: ${PORT}
 
 spring:
   datasource:
-    username: postgres
-    password: secret
-    url: jdbc:postgresql://localhost:5433/task_management
+    username: ${USERNAME}
+    password: ${PASSWORD}
+    url: ${URL}
     driver-class-name: org.postgresql.Driver
 
   jpa:
