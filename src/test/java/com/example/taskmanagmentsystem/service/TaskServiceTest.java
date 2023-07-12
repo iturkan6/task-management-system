@@ -9,6 +9,8 @@ import com.example.taskmanagmentsystem.exception.TaskNotFoundException;
 import com.example.taskmanagmentsystem.exception.UserNotFoundException;
 import com.example.taskmanagmentsystem.repository.TaskRepo;
 import com.example.taskmanagmentsystem.repository.UserRepo;
+import lombok.SneakyThrows;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -35,12 +37,20 @@ private TaskService taskService;
 
     @Mock
     private JwtAuthFilter jwtAuthFilter;
+    private AutoCloseable closeable;
 
     @BeforeEach
     void setUp() {
-        MockitoAnnotations.openMocks(this);
+        this.closeable = MockitoAnnotations.openMocks(this);
         taskService = new TaskService(taskRepo, userRepo, jwtAuthFilter);
     }
+
+    @AfterEach
+    @SneakyThrows
+    void close(){
+        this.closeable.close();
+    }
+
 
     @Test
     void createTask_ValidRequest_TaskCreated() {
