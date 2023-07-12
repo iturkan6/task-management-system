@@ -11,6 +11,7 @@ import com.example.taskmanagmentsystem.repository.TaskRepo;
 import com.example.taskmanagmentsystem.repository.UserRepo;
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.AfterEach;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -50,8 +51,6 @@ private TaskService taskService;
     void close(){
         this.closeable.close();
     }
-
-
     @Test
     void createTask_ValidRequest_TaskCreated() {
         String email = "user@example.com";
